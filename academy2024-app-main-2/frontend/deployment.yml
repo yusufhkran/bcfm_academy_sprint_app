@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: sprint-frontend
-        image: 571600829776.dkr.ecr.us-east-1.amazonaws.com/sprint-frontend:sprint-frontend-4
+        image: 571600829776.dkr.ecr.us-east-1.amazonaws.com/sprint-frontend:sprint-frontend-11
         ports:
         - containerPort: 80  # Uygulamanızın dinlediği port
         livenessProbe:
