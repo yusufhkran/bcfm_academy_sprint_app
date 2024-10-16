@@ -33,7 +33,7 @@ func greet(w http.ResponseWriter, r *http.Request) {
 
 	// Yanıtı oluştur
 	response := map[string]string{
-		"message": fmt.Sprintf("Merhaba, %s! Academy 2024 BCFM 1.Sprint'e hoş geldin!", name),
+		"message": fmt.Sprintf("Merhaba a takımı the best , %s! Academy 2024 BCFM 1.Sprint'e hoş geldin!", name),
 	}
 
 	// JSON olarak yanıt ver
