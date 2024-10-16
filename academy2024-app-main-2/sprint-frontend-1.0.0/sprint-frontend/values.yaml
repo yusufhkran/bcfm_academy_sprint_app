@@ -1,0 +1,2 @@
+replicas: 3  # Default number of replicas
+image: 571600829776.dkr.ecr.us-east-1.amazonaws.com/sprint-frontend:sprint-frontend-18  # Default image
