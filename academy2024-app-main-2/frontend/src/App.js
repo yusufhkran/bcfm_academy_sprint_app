@@ -11,7 +11,7 @@ function App() {
 
   const fetchGreeting = async () => {
     try {
-      const response = await axios.get(`http://172.20.58.68:80/${name}`);
+      const response = await axios.get(`http://172.20.150.182:80/${name}`);
       setGreeting(response.data.message);
     } catch (error) {
       console.error('Mesaj alınırken hata oluştu:', error);
