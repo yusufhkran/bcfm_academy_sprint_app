@@ -38,5 +38,20 @@ pipeline {
                 sh 'docker push $DOCKER_IMAGE'
             }
         }
+stage('Update Helm Chart') {
+    steps {
+        script {
+            // Helm chart'ınızın bulunduğu dizine geçin
+            cd helm-chart
+
+            // values.yaml dosyasındaki appVersion değerini güncelleyin
+            sh "sed -i 's/appVersion: .*/appVersion: ${BUILD_NUMBER}/g' values.yaml"
+
+            // Helm chart'ı package haline getirin (isteğe bağlı)
+            sh "helm package ."
+
+            // Güncellenmiş chart'ı deploy edin (release ismi ve namespace'inizi değiştirin)
+            sh "helm upgrade my-release . --namespace my-namespace"
+        }
     }
 }
