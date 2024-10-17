@@ -1,4 +1,0 @@
-apiVersion: v2
-description: Helm chart for deploying the sprint-frontend application
-name: sprint-frontend
-version: 1.0.0
