@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sprint-frontend
+  labels:
+    app.kubernetes.io/managed-by: Helm  
+spec:
+  replicas: {{ .Values.replicas }}  # Use value from values.yaml
+  selector:
+    matchLabels:
+      app: sprint-frontend
+  template:
+    metadata:
+      labels:
+        app: sprint-frontend
+    spec:
+      containers:
+      - name: sprint-frontend
+        image: {{ .Values.image }}  # Use value from values.yaml
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
