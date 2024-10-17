@@ -11,11 +11,15 @@ function App() {
 
   const fetchGreeting = async () => {
     try {
+<<<<<<< HEAD
       const response = await axios.get(`http://internal-k8s-kubesyst-sprintin-c5c14cefce-1796415880.us-east-1.elb.amazonaws.com:8080/${name}`);
+=======
+      const response = await axios.get(`http://internal-k8s-sprint-sprintba-dbb0634fe6-215021323.us-east-1.elb.amazonaws.com/${name}`);
+>>>>>>> 90ec1b8353dd3927b2cf470feb437f60d71e3770
       setGreeting(response.data.message);
     } catch (error) {
       console.error('Mesaj alınırken hata oluştu:', error);
-      setGreeting('Üzgünüm, bir hata oluştu.');
+      setGreeting('Üzgünüm, bir hata team a deneme oluştu.');
     }
   };
 
@@ -27,7 +31,7 @@ function App() {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
-        <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Academy 2024 BCFM</h1>
+        <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Academy 2024 Team A BCFM</h1>
         <form onSubmit={handleSubmit} className="mb-4">
           <input
             type="text"
