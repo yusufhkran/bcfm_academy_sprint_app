@@ -15,7 +15,7 @@ function App() {
       setGreeting(response.data.message);
     } catch (error) {
       console.error('Mesaj alınırken hata oluştu:', error);
-      setGreeting('Üzgünüm, bir hata team a oluştu.');
+      setGreeting('Üzgünüm, bir hata team a deneme oluştu.');
     }
   };
 
