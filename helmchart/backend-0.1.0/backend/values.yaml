@@ -1,0 +1,24 @@
+backend:
+  image: 
+    repository: 571600829776.dkr.ecr.us-east-1.amazonaws.com
+    name: sprint
+    tag: 5
+  replicas: 2
+  servicePort: 8080
+  
+    
+
+frontend:
+  image:
+    repository: 571600829776.dkr.ecr.us-east-1.amazonaws.com/sprint-frontend
+    tag: sprint-frontend
+  appVersion: 27
+  replicas: 2
+  servicePort: 80
+  
+    
+
+
+
+
+

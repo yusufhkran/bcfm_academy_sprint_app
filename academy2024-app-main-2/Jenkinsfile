@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    environment {
+        GIT_REPO_URL = 'https://github.com/yusufhkran/bcfm_academy_sprint_app.git' // GitHub repo URL'si
+        ECR_REGISTRY = '571600829776.dkr.ecr.us-east-1.amazonaws.com/sprint'
+        AWS_REGION = 'us-east-1' // AWS bölgeniz
+        
+    }
+
+    stages {
+        stage('Checkout from GitHub') {
+            steps {
+                git branch: 'main', url: "${GIT_REPO_URL}"
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                sh 'cd academy2024-app-main-2 && cd backend && docker build -t ${ECR_REGISTRY}:sprint-${BUILD_NUMBER} .'
+            }
+        }
+        stage('Push Image to ECR') {
+            steps {
+                sh 'aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_REGISTRY}'
+                sh 'docker push ${ECR_REGISTRY}:sprint-${BUILD_NUMBER}'
+            }
+        }
+    }
+}
