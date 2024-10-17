@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
-        <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Academy 2024 BCFM</h1>
+        <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Academy 2024 Team A BCFM</h1>
         <form onSubmit={handleSubmit} className="mb-4">
           <input
             type="text"
